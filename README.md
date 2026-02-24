@@ -1,2 +1,17 @@
 ## CAKE: Confidence in Assignments via K-partition Ensembles
-Clustering is widely used for unsupervised structure discovery, but it offers no clear measure of how reliable each individual assignment is. While convergence or objective scores may reflect global quality, they do not indicate whether specific points are stably assigned, particularly in algorithms like $k$-means, which are sensitive to initialization and noise. This assignment-level instability can undermine clustering accuracy and robustness. Ensemble methods improve global consistency by aggregating multiple runs, but they typically lack tools for quantifying pointwise confidence. We introduce **CAKE** (Confidence in Assignments via K-partition Ensembles), a unified framework that evaluates each point using two complementary statistics, assignment stability and consistency of local geometric fit, measured across a clustering ensemble. These are combined into a single interpretable confidence score in $[0,1]$. Theoretical analysis shows that CAKE scores are robust to noise and reliably distinguish stable from unstable points. Empirical results on synthetic and real-world datasets demonstrate that CAKE identifies both high- and low-confidence assignments, enabling targeted filtering or prioritization that improves clustering quality.
+Clustering is widely used for unsupervised structure discovery, yet it offers limited insight into how reliable each individual assignment is. Diagnostics, such as convergence behavior or objective values, may reflect global quality, but they do not indicate whether particular instances are assigned confidently, especially for initialization-sensitive algorithms like $k$-means. This assignment-level instability can undermine both accuracy and robustness. Ensemble approaches improve global consistency by aggregating multiple runs, but they typically lack tools for quantifying pointwise confidence in a way that combines cross-run agreement with geometric support from the learned cluster structure. We introduce **CAKE** (Confidence in Assignments via K-partition Ensembles), a framework that evaluates each point using two complementary statistics computed over a clustering ensemble: assignment stability and consistency of local geometric fit. These are combined into a single, interpretable score in $[0,1]$. Our theoretical analysis shows that CAKE remains effective under noise and separates stable from unstable points. Experiments on synthetic and real-world datasets indicate that CAKE effectively highlights ambiguous points and stable core members, providing a confidence ranking that can guide filtering or prioritization to improve clustering quality.
+
+# 
+
+For a preprint, see: https://arxiv.org/abs/2602.18435 and to cite this work, please use the following:
+```bibtex
+@misc{semoglou2026assigningconfidencekpartitionensembles,
+   title={Assigning Confidence: K-partition Ensembles},
+   author={Aggelos Semoglou and John Pavlopoulos},
+   year={2026},
+   eprint={2602.18435},
+   archivePrefix={arXiv},
+   primaryClass={cs.LG},
+   url={https://arxiv.org/abs/2602.18435},
+}
+```
