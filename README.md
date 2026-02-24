@@ -3,7 +3,7 @@ Clustering is widely used for unsupervised structure discovery, yet it offers li
 
 # 
 
-For a preprint, see: https://arxiv.org/abs/2602.18435 and to cite this work, please use the following:
+For a **preprint**, see: https://arxiv.org/abs/2602.18435 and to cite this work, please use the following:
 ```bibtex
 @misc{semoglou2026assigningconfidencekpartitionensembles,
    title={Assigning Confidence: K-partition Ensembles},
