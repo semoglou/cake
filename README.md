@@ -35,7 +35,7 @@ If you find this work useful, please consider citing:
 
 Semoglou, A., & Pavlopoulos, J. (2026).  
 **Assigning Confidence: K-partition Ensembles.**  
-Preprint: [arXiv:2602.18435](https://arxiv.org/abs/2602.18435)
+Preprint: [https://arxiv.org/abs/2602.18435](https://arxiv.org/abs/2602.18435)
 
 ```bibtex
 @misc{semoglou2026assigningconfidencekpartitionensembles,
