@@ -8,7 +8,7 @@ Conversely, purely geometric signals such as the Silhouette score evaluate local
 
 ![Assignment Stability vs Geometric Consistency](figs/failures.png)
 
-*Assignment Stability vs. Geometric Consistency: A stable but geometrically weak outlier (P1) and an unstable boundary point with higher local fit in one cluster (P2).*
+*Assignment Stability vs. Geometric Consistency: A stable but geometrically weak outlier (P1) and an unstable boundary point with higher local fit in one cluster (P2)*
 
 
 These complementary failure modes motivate a confidence signal that jointly accounts for both **assignment stability** and **consistency of geometric support** at the point level.
