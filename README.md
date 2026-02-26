@@ -1,5 +1,33 @@
 ## CAKE: Confidence in Assignments via K-partition Ensembles
-Clustering is widely used for unsupervised structure discovery, yet it offers limited insight into how reliable each individual assignment is. Diagnostics, such as convergence behavior or objective values, may reflect global quality, but they do not indicate whether particular instances are assigned confidently, especially for initialization-sensitive algorithms like *k*-means. This assignment-level instability can undermine both accuracy and robustness. Ensemble approaches improve global consistency by aggregating multiple runs, but they typically lack tools for quantifying pointwise confidence in a way that combines cross-run agreement with geometric support from the learned cluster structure. We introduce **CAKE** (Confidence in Assignments via K-partition Ensembles), a framework that evaluates each point using two complementary statistics computed over a clustering ensemble: assignment stability and consistency of local geometric fit. These are combined into a single, interpretable score in [0,1]. Our theoretical analysis shows that CAKE remains effective under noise and separates stable from unstable points. Experiments on synthetic and real-world datasets indicate that CAKE effectively highlights ambiguous points and stable core members, providing a confidence ranking that can guide filtering or prioritization to improve clustering quality.
+Clustering assigns each data point to a group, but it does not tell us how reliable that assignment is.  
+While global validation metrics assess overall quality, they provide little insight into the trustworthiness of *individual* assignments.
+
+Ensemble-based clustering improves robustness by aggregating multiple partitions. However, most ensemble-style uncertainty measures focus primarily on **cross-run agreement** (e.g., aligned vote counts or dispersion of labels across runs). Agreement alone is not sufficient: a point may be consistently assigned due to systematic bias or rigid decision boundaries, even if it is weakly integrated into the cluster structure.
+
+Conversely, purely geometric signals such as the Silhouette score evaluate local separation within a single run but ignore cross-run instability. A point may appear geometrically well placed in one partition, yet switch clusters across runs because it lies near a boundary or because multiple partitions explain it nearly equally well.
+
+![Assignment Stability vs Geometric Consistency](figs/failures.png)
+
+*Assignment Stability vs. Geometric Consistency: A stable but geometrically weak outlier (P1) and an unstable boundary point with higher local fit in one cluster (P2).*
+
+
+These complementary failure modes motivate a confidence signal that jointly accounts for both **assignment stability** and **consistency of geometric support** at the point level.
+
+#
+
+## The CAKE Framework
+
+**CAKE** (Confidence in Assignments via K-partition Ensembles) provides a principled, per-instance confidence score by fusing two complementary statistics computed over a clustering ensemble:
+
+- 🔁 **Assignment Stability**: pairwise agreement across runs after optimal label alignment, using the Hungarian algorithm.   
+- 📐 **Geometric Consistency**: aggregated Silhouette statistics across runs.  
+
+These components are combined into a single, interpretable score in **[0, 1]**, enabling:
+
+- Identification of stable core members.  
+- Detection of ambiguous boundary points.  
+- Filtering of unreliable assignments.  
+- Ranking of instances by clustering confidence.  
 
 ![Pipeline](figs/pipel.png)
 
