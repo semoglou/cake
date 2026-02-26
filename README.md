@@ -13,10 +13,6 @@ Conversely, purely geometric signals such as the Silhouette score evaluate local
 
 These complementary failure modes motivate a confidence signal that jointly accounts for both **assignment stability** and **consistency of geometric support** at the point level.
 
-#
-
-## The CAKE Framework
-
 **CAKE** (Confidence in Assignments via K-partition Ensembles) provides a principled, per-instance confidence score by fusing two complementary statistics computed over a clustering ensemble:
 
 - 🔁 **Assignment Stability**: pairwise agreement across runs after optimal label alignment, using the Hungarian algorithm.   
