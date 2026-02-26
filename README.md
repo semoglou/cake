@@ -15,3 +15,4 @@ For a **preprint**, see: https://arxiv.org/abs/2602.18435 and to cite this work,
    url={https://arxiv.org/abs/2602.18435},
 }
 ```
+![Pipeline](figs/pipel.png)
