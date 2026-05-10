@@ -85,12 +85,7 @@ For most workflows, use `kmeans_ensemble` to build an ensemble and `cake_with_co
 Computes silhouette scores for each sample, either exactly using scikit-learn or approximately using distances to cluster centroids.
 
 ```python
-sil_samples(
-        X,
-        labels,
-        approximation=False,
-        centers=None
-)
+sil_samples(X, labels, approximation=False, centers=None)
 ```
 
 **Inputs**
@@ -120,12 +115,9 @@ sil_samples(
 
 Computes sample-level silhouette statistics across multiple clustering runs.
 
-    sil_samples_stats(
-        X,
-        labels_list,
-        approximation=False,
-        centers_list=None
-    )
+```python
+sil_samples_stats(X, labels_list, approximation=False, centers_list=None)
+```
 
 **Inputs**
 
@@ -156,10 +148,9 @@ Computes sample-level silhouette statistics across multiple clustering runs.
 
 Aligns the labels of one clustering solution to another using the Hungarian algorithm.
 
-    align_labels(
-        target,
-        source
-    )
+```python
+align_labels(target, source)
+```
 
 **Inputs**
 
@@ -180,9 +171,9 @@ Aligns the labels of one clustering solution to another using the Hungarian algo
 
 Computes pointwise assignment stability across all pairs of clustering runs.
 
-    pairwise_stability(
-        labels_runs
-    )
+```python
+pairwise_stability(labels_runs)
+```
 
 **Inputs**
 
@@ -200,14 +191,9 @@ Computes pointwise assignment stability across all pairs of clustering runs.
 
 Computes CAKE confidence scores for each sample in a clustering ensemble.
 
-    cake(
-        X,
-        labels_list,
-        method='product',
-        approximation=False,
-        centers_list=None,
-        geom_norm='clip'
-    )
+```python
+cake(X, labels_list, method='product', approximation=False, centers_list=None, geom_norm='clip')
+```
 
 **Inputs**
 
@@ -253,10 +239,9 @@ Computes CAKE confidence scores for each sample in a clustering ensemble.
 
 Computes consensus clustering labels from multiple clustering runs using label alignment and majority vote.
 
-    consensus_labels(
-        labels_list,
-        method='medoid'
-    )
+```python
+consensus_labels(labels_list, method='medoid')
+```
 
 **Inputs**
 
@@ -287,15 +272,132 @@ Note: majority-vote consensus does not guarantee that all reference cluster labe
 
 Builds a KMeans clustering ensemble by running KMeans multiple times with different random seeds.
 
-    kmeans_ensemble(
-        X,
-        n_clusters,
-        n_runs=50,
-        random_state=1,
-        init='random',
-        n_init=1,
-        max_iter=300,
-        tol=1e-4,
-        algorithm='lloyd',
-        return_models=False
+```python
+kmeans_ensemble(
+    X,
+    n_clusters,
+    n_runs=50,
+    random_state=1,
+    init='random',
+    n_init=1,
+    max_iter=300,
+    tol=1e-4,
+    algorithm='lloyd',
+    return_models=False
+)
+```
 
+**Inputs**
+
+- `X`: array-like of shape `(n_samples, n_features)`  
+  Input data matrix.
+
+- `n_clusters`: int  
+  Number of clusters for each KMeans run.
+
+- `n_runs`: int, default `50`  
+  Number of KMeans runs in the ensemble.
+
+- `random_state`: int or None, default `1`  
+  Base random seed used to generate run-specific seeds.
+
+- `init`: str or array-like, default `'random'`  
+  KMeans initialization strategy.
+
+- `n_init`: int or `'auto'`, default `1`  
+  Number of initializations per KMeans run.  
+  For ensemble diversity, `n_init=1` is recommended.
+
+- `max_iter`: int, default `300`  
+  Maximum number of iterations for each KMeans run.
+
+- `tol`: float, default `1e-4`  
+  Convergence tolerance.
+
+- `algorithm`: str, default `'lloyd'`  
+  KMeans algorithm.
+
+- `return_models`: bool, default `False`  
+  If `True`, also returns the fitted KMeans models.
+
+**Returns**
+
+- `labels_list`: list of arrays  
+  One label vector per KMeans run. Each array has shape `(n_samples,)`.
+
+- `centers_list`: list of arrays  
+  Cluster centers for each KMeans run.
+
+- `ensemble_summary`: pandas DataFrame  
+  Per-run metadata including run index, seed, inertia, and number of iterations.
+
+- `models`: list of fitted KMeans models  
+  Returned only when `return_models=True`.
+
+---
+
+### `cake_with_consensus`
+
+Computes CAKE confidence scores together with consensus clustering labels.
+
+```python
+cake_with_consensus(
+    X,
+    labels_list,
+    cake_method='product',
+    consensus_method='medoid',
+    approximation=False,
+    centers_list=None,
+    geom_norm='clip'
+)
+```
+
+**Inputs**
+
+- `X`: array-like of shape `(n_samples, n_features)`  
+  Input data matrix.
+
+- `labels_list`: list of array-like, each of shape `(n_samples,)`  
+  List of cluster label vectors from multiple clustering runs.
+
+- `cake_method`: str, default `'product'`  
+  Method used to combine assignment stability and geometric stability.  
+  Options: `'product'` or `'harmonic_mean'`.
+
+- `consensus_method`: str, default `'medoid'`  
+  Consensus strategy passed to `consensus_labels`.  
+  Options: `'medoid'` or `'best_ref'`.
+
+- `approximation`: bool, default `False`  
+  Whether to use centroid-based approximate silhouette scores.
+
+- `centers_list`: list of array-like or None, default `None`  
+  Optional list of cluster centers, one per clustering run.  
+  Used when `approximation=True`.
+
+- `geom_norm`: str, default `'clip'`  
+  Strategy for normalizing the geometric stability component.  
+  Options: `'clip'` or `'affine'`.
+
+**Returns**
+
+- `cake_scores`: array of shape `(n_samples,)`  
+  Final CAKE confidence score for each sample.
+
+- `consensus`: array of shape `(n_samples,)`  
+  Consensus cluster label for each sample.
+
+- `consensus_strength`: array of shape `(n_samples,)`  
+  Fraction of aligned runs voting for the consensus label.
+
+- `assignment_stability`: array of shape `(n_samples,)`  
+  Pairwise assignment stability across the ensemble.
+
+- `geometric_stability`: array of shape `(n_samples,)`  
+  Silhouette-based geometric reliability score.
+
+- `summary`: pandas DataFrame  
+  Per-sample table containing consensus labels, consensus strength, CAKE components, and final CAKE score.
+
+- `reference_index`: int  
+  Index of the reference run selected by the consensus method.
