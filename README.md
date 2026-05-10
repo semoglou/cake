@@ -27,6 +27,14 @@ These components are combined into a single, interpretable score in **[0, 1]**, 
 - Filtering of unreliable assignments.  
 - Ranking of instances by clustering confidence.  
 
+<p align="center">
+  <img src="https://github.com/semoglou/cake/blob/main/figs/synthmap.png" alt="CAKE visualization" width="700">
+</p>
+
+<p align="center">
+  <em>CAKE visualization on synthetic data.</em>
+</p>
+
 # 
 
 ## Citation
