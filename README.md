@@ -446,3 +446,7 @@ The returned `summary` is a pandas DataFrame with one row per data point:
 
 
 The `CAKE` column contains the final confidence score for each clustering assignment. Higher values indicate assignments that are both stable across the ensemble and geometrically well supported.
+
+## License
+
+This project is licensed under the [MIT License](https://github.com/semoglou/cake/blob/main/LICENSE).
