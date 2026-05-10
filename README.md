@@ -18,14 +18,14 @@ These complementary failure modes motivate a confidence signal that jointly acco
 - 🔁 **Assignment Stability**: pairwise agreement across runs after optimal label alignment, using the Hungarian algorithm.   
 - 📐 **Geometric Consistency**: aggregated Silhouette statistics across runs.  
 
+<img src="https://github.com/semoglou/cake/blob/main/figs/pipel.png" alt="CAKE pipeline" width="700">
+
 These components are combined into a single, interpretable score in **[0, 1]**, enabling:
 
 - Identification of stable core members.  
 - Detection of ambiguous boundary points.  
 - Filtering of unreliable assignments.  
 - Ranking of instances by clustering confidence.  
-
-<img src="https://github.com/semoglou/cake/blob/main/figs/pipel.png" alt="CAKE pipeline" width="700">
 
 # 
 
