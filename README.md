@@ -6,10 +6,7 @@ Ensemble-based clustering improves robustness by aggregating multiple partitions
 
 Conversely, purely geometric signals such as the Silhouette score evaluate local separation within a single run but ignore cross-run instability. A point may appear geometrically well placed in one partition, yet switch clusters across runs because it lies near a boundary or because multiple partitions explain it nearly equally well.
 
-![Assignment Stability vs Geometric Consistency](https://github.com/semoglou/cake/blob/main/figs/failures.png)
-
-*Complementary failure modes: stability without geometry, geometry without stability.*
-
+<img src="https://github.com/semoglou/cake/blob/main/figs/failures.png" alt="Assignment Stability vs Geometric Consistency" width="500">
 
 These complementary failure modes motivate a confidence signal that jointly accounts for both **assignment stability** and **consistency of geometric support** at the point level.
 
