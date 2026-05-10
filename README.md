@@ -436,7 +436,7 @@ print(summary.head())
 
 The returned `summary` is a pandas DataFrame with one row per data point: 
 
-      Mean Silhouette | STD Silhouette | Geometric Stability | Assignment Stability | CAKE
+| Mean Silhouette                          | STD Silhouette                               | Geometric Stability          | Assignment Stability      | CAKE                        |   |
 
 
 The `CAKE` column contains the final confidence score for each clustering assignment. Higher values indicate assignments that are both stable across the ensemble and geometrically well supported.
