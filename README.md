@@ -28,7 +28,7 @@ These components are combined into a single, interpretable score in **[0, 1]**, 
 - Ranking of instances by clustering confidence.  
 
 <p align="center">
-  <img src="https://github.com/semoglou/cake/blob/main/figs/synthmap.png" alt="CAKE visualization" width="700">
+  <img src="https://github.com/semoglou/cake/blob/main/figs/synthmap.png" alt="CAKE visualization" width="400">
 </p>
 
 <p align="center">
