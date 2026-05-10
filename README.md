@@ -59,7 +59,7 @@ pip install cake-ensemble
 
 Then import it in Python as: 
 
-```bash
+```python
 from cake_ensemble import (
     sil_samples,
     sil_samples_stats,
