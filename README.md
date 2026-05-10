@@ -9,7 +9,7 @@ Ensemble-based clustering improves robustness by aggregating multiple partitions
 
 Conversely, purely geometric signals such as the Silhouette score evaluate local separation within a single run but ignore cross-run instability. A point may appear geometrically well placed in one partition, yet switch clusters across runs because it lies near a boundary or because multiple partitions explain it nearly equally well.
 
-<img src="https://github.com/semoglou/cake/blob/main/figs/failures.png" alt="Assignment Stability vs Geometric Consistency" width="800">
+<img src="https://raw.githubusercontent.com/semoglou/cake/main/figs/failures.png" alt="Assignment Stability vs Geometric Consistency" width="800">
 
 These complementary failure modes motivate a confidence signal that jointly accounts for both **assignment stability** and **consistency of geometric support** at the point level.
 
@@ -18,7 +18,7 @@ These complementary failure modes motivate a confidence signal that jointly acco
 - 🔁 **Assignment Stability**: pairwise agreement across runs after optimal label alignment, using the Hungarian algorithm.   
 - 📐 **Geometric Consistency**: aggregated Silhouette statistics across runs.  
 
-<img src="https://github.com/semoglou/cake/blob/main/figs/pipel.png" alt="CAKE pipeline" width="700">
+<img src="https://raw.githubusercontent.com/semoglou/cake/main/figs/pipel.png" alt="CAKE pipeline" width="700">
 
 These components are combined into a single, interpretable score in **[0, 1]**, enabling:
 
@@ -27,7 +27,7 @@ These components are combined into a single, interpretable score in **[0, 1]**, 
 - Filtering of unreliable assignments.  
 - Ranking of instances by clustering confidence.  
 
-<img src="https://github.com/semoglou/cake/blob/main/figs/synthmap.png" alt="CAKE visualization" width="400">
+<img src="https://raw.githubusercontent.com/semoglou/cake/main/figs/synthmap.png" alt="CAKE visualization" width="400">
 
 <em>CAKE scores on synthetic data. Red ↑; Blue ↓.</em>
 
