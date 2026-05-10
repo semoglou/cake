@@ -84,12 +84,14 @@ For most workflows, use `kmeans_ensemble` to build an ensemble and `cake_with_co
 
 Computes silhouette scores for each sample, either exactly using scikit-learn or approximately using distances to cluster centroids.
 
+```python
     sil_samples(
         X,
         labels,
         approximation=False,
-        centers=None,
+        centers=None
     )
+```
 
 **Inputs**
 
@@ -122,7 +124,7 @@ Computes sample-level silhouette statistics across multiple clustering runs.
         X,
         labels_list,
         approximation=False,
-        centers_list=None,
+        centers_list=None
     )
 
 **Inputs**
@@ -156,7 +158,7 @@ Aligns the labels of one clustering solution to another using the Hungarian algo
 
     align_labels(
         target,
-        source,
+        source
     )
 
 **Inputs**
@@ -179,7 +181,7 @@ Aligns the labels of one clustering solution to another using the Hungarian algo
 Computes pointwise assignment stability across all pairs of clustering runs.
 
     pairwise_stability(
-        labels_runs,
+        labels_runs
     )
 
 **Inputs**
@@ -204,7 +206,7 @@ Computes CAKE confidence scores for each sample in a clustering ensemble.
         method='product',
         approximation=False,
         centers_list=None,
-        geom_norm='clip',
+        geom_norm='clip'
     )
 
 **Inputs**
@@ -253,7 +255,7 @@ Computes consensus clustering labels from multiple clustering runs using label a
 
     consensus_labels(
         labels_list,
-        method='medoid',
+        method='medoid'
     )
 
 **Inputs**
@@ -295,5 +297,5 @@ Builds a KMeans clustering ensemble by running KMeans multiple times with differ
         max_iter=300,
         tol=1e-4,
         algorithm='lloyd',
-        return_models=False,
+        return_models=False
 
