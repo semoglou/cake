@@ -76,8 +76,6 @@ from cake_ensemble import (
 
 CAKE provides utilities for computing sample-level silhouette statistics, aligning clustering labels, measuring assignment stability, computing CAKE confidence scores, deriving consensus labels, and building KMeans ensembles.
 
-For most workflows, use `kmeans_ensemble` to build an ensemble and `cake_with_consensus` to compute confidence scores together with consensus assignments.
-
 ---
 
 ### `sil_samples`
