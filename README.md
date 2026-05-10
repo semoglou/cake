@@ -85,12 +85,12 @@ For most workflows, use `kmeans_ensemble` to build an ensemble and `cake_with_co
 Computes silhouette scores for each sample, either exactly using scikit-learn or approximately using distances to cluster centroids.
 
 ```python
-    sil_samples(
+sil_samples(
         X,
         labels,
         approximation=False,
         centers=None
-    )
+)
 ```
 
 **Inputs**
