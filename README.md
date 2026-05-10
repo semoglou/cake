@@ -57,7 +57,7 @@ Install **CAKE** from [PyPI](https://pypi.org/project/cake-ensemble/):
 pip install cake-ensemble
 ```
 
-Then import it in Python as: 
+Ιmport the main functions in Python as: 
 
 ```python
 from cake_ensemble import (
@@ -71,3 +71,16 @@ from cake_ensemble import (
     cake_with_consensus,
 )
 ```
+
+## Function Overview
+
+| Function            | Purpose                                                                                | Key arguments                                                                         | Returns                                                                                                         |
+| ------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| cake                | Computes per-point CAKE confidence scores from a clustering ensemble.                  | X, labels_list, method, approximation, centers_list, geom_norm                        | cake_scores, assignment_stability, geometric_stability, summary                                                 |
+| cake_with_consensus | Computes CAKE scores together with consensus clustering labels.                        | X, labels_list, cake_method, consensus_method, approximation, centers_list, geom_norm | cake_scores, consensus, consensus_strength, assignment_stability, geometric_stability, summary, reference_index |
+| kmeans_ensemble     | Builds a KMeans ensemble by running KMeans multiple times with different random seeds. | X, n_clusters, n_runs, random_state, init, n_init                                     | labels_list, centers_list, ensemble_summary                                                                     |
+| consensus_labels    | Computes consensus labels using Hungarian alignment and majority vote.                 | labels_list, method                                                                   | consensus, consensus_strength, reference_index                                                                  |
+| pairwise_stability  | Computes per-point assignment stability across all pairs of clustering runs.           | labels_runs                                                                           | assignment_stability                                                                                            |
+| align_labels        | Aligns one clustering label vector to another using the Hungarian algorithm.           | target, source                                                                        | aligned_labels                                                                                                  |
+| sil_samples         | Computes exact or approximate silhouette scores for each sample.                       | X, labels, approximation, centers                                                     | silhouette_scores                                                                                               |
+| sil_samples_stats   | Aggregates sample-level silhouette scores across multiple clustering runs.             | X, labels_list, approximation, centers_list                                           | mean_silhouette, std_silhouette                                                                                 |
