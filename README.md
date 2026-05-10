@@ -72,16 +72,228 @@ from cake_ensemble import (
 )
 ```
 
-## Function Overview
+## API Reference
 
-| Function              | Purpose                                                                                | Key arguments                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Returns                                                                                                                       |
-| --------------------- | -------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `cake`                | Computes per-point CAKE confidence scores from a clustering ensemble.                  | • `X`: array-like, shape `(n_samples, n_features)`<br>• `labels_list`: list of array-like, each shape `(n_samples,)`<br>• `method`: str, default `'product'`; one of `'product'`, `'harmonic_mean'`<br>• `approximation`: bool, default `False`<br>• `centers_list`: list of array-like or None, default `None`<br>• `geom_norm`: str, default `'clip'`; one of `'clip'`, `'affine'`                                                                                        | `cake_scores`, `assignment_stability`, `geometric_stability`, `summary`                                                       |
-| `cake_with_consensus` | Computes CAKE scores together with consensus clustering labels.                        | • `X`: array-like, shape `(n_samples, n_features)`<br>• `labels_list`: list of array-like, each shape `(n_samples,)`<br>• `cake_method`: str, default `'product'`; one of `'product'`, `'harmonic_mean'`<br>• `consensus_method`: str, default `'medoid'`; one of `'medoid'`, `'best_ref'`<br>• `approximation`: bool, default `False`<br>• `centers_list`: list of array-like or None, default `None`<br>• `geom_norm`: str, default `'clip'`; one of `'clip'`, `'affine'` | `cake_scores`, `consensus`, `consensus_strength`, `assignment_stability`, `geometric_stability`, `summary`, `reference_index` |
-| `kmeans_ensemble`     | Builds a KMeans ensemble by running KMeans multiple times with different random seeds. | • `X`: array-like, shape `(n_samples, n_features)`<br>• `n_clusters`: int<br>• `n_runs`: int, default `50`<br>• `random_state`: int or None, default `1`<br>• `init`: str or array-like, default `'random'`<br>• `n_init`: int or `'auto'`, default `1`<br>• `max_iter`: int, default `300`<br>• `tol`: float, default `1e-4`<br>• `algorithm`: str, default `'lloyd'`<br>• `return_models`: bool, default `False`                                                          | `labels_list`, `centers_list`, `ensemble_summary`; plus `models` if `return_models=True`                                      |
-| `consensus_labels`    | Computes consensus labels using Hungarian alignment and majority vote.                 | • `labels_list`: list of array-like, each shape `(n_samples,)`<br>• `method`: str, default `'medoid'`; one of `'medoid'`, `'best_ref'`                                                                                                                                                                                                                                                                                                                                      | `consensus`, `consensus_strength`, `reference_index`                                                                          |
-| `pairwise_stability`  | Computes per-point assignment stability across all pairs of clustering runs.           | • `labels_runs`: list of array-like, each shape `(n_samples,)`                                                                                                                                                                                                                                                                                                                                                                                                              | `assignment_stability`                                                                                                        |
-| `align_labels`        | Aligns one clustering label vector to another using the Hungarian algorithm.           | • `target`: array-like, shape `(n_samples,)`<br>• `source`: array-like, shape `(n_samples,)`                                                                                                                                                                                                                                                                                                                                                                                | `aligned_labels`                                                                                                              |
-| `sil_samples`         | Computes exact or approximate silhouette scores for each sample.                       | • `X`: array-like, shape `(n_samples, n_features)`<br>• `labels`: array-like, shape `(n_samples,)`<br>• `approximation`: bool, default `False`<br>• `centers`: array-like or None, default `None`                                                                                                                                                                                                                                                                           | `silhouette_scores`                                                                                                           |
-| `sil_samples_stats`   | Aggregates sample-level silhouette scores across multiple clustering runs.             | • `X`: array-like, shape `(n_samples, n_features)`<br>• `labels_list`: list of array-like, each shape `(n_samples,)`<br>• `approximation`: bool, default `False`<br>• `centers_list`: list of array-like or None, default `None`                                                                                                                                                                                                                                            | `mean_silhouette`, `std_silhouette`                                                                                           |
-                                                                         |
+CAKE provides utilities for computing sample-level silhouette statistics, aligning clustering labels, measuring assignment stability, computing CAKE confidence scores, deriving consensus labels, and building KMeans ensembles.
+
+For most workflows, use `kmeans_ensemble` to build an ensemble and `cake_with_consensus` to compute confidence scores together with consensus assignments.
+
+---
+
+### `sil_samples`
+
+Computes silhouette scores for each sample, either exactly using scikit-learn or approximately using distances to cluster centroids.
+
+    sil_samples(
+        X,
+        labels,
+        approximation=False,
+        centers=None,
+    )
+
+**Inputs**
+
+- `X`: array-like of shape `(n_samples, n_features)`  
+  Input data matrix.
+
+- `labels`: array-like of shape `(n_samples,)`  
+  Cluster label assigned to each sample.
+
+- `approximation`: bool, default `False`  
+  If `False`, computes exact silhouette scores.  
+  If `True`, computes a faster centroid-based approximation.
+
+- `centers`: array-like of shape `(n_clusters, n_features)` or None, default `None`  
+  Optional cluster centers used when `approximation=True`.  
+  If not provided, centers are computed from `X` and `labels`.
+
+**Returns**
+
+- `silhouette_scores`: array of shape `(n_samples,)`  
+  Silhouette score for each sample.
+
+---
+
+### `sil_samples_stats`
+
+Computes sample-level silhouette statistics across multiple clustering runs.
+
+    sil_samples_stats(
+        X,
+        labels_list,
+        approximation=False,
+        centers_list=None,
+    )
+
+**Inputs**
+
+- `X`: array-like of shape `(n_samples, n_features)`  
+  Input data matrix.
+
+- `labels_list`: list of array-like, each of shape `(n_samples,)`  
+  List of label vectors from multiple clustering runs.
+
+- `approximation`: bool, default `False`  
+  Whether to use centroid-based approximate silhouette scores.
+
+- `centers_list`: list of array-like or None, default `None`  
+  Optional list of cluster-center arrays, one per clustering run.  
+  Used when `approximation=True`.
+
+**Returns**
+
+- `mean_silhouette`: array of shape `(n_samples,)`  
+  Mean silhouette score of each sample across the ensemble.
+
+- `std_silhouette`: array of shape `(n_samples,)`  
+  Standard deviation of each sample’s silhouette score across the ensemble.
+
+---
+
+### `align_labels`
+
+Aligns the labels of one clustering solution to another using the Hungarian algorithm.
+
+    align_labels(
+        target,
+        source,
+    )
+
+**Inputs**
+
+- `target`: array-like of shape `(n_samples,)`  
+  Reference label vector.
+
+- `source`: array-like of shape `(n_samples,)`  
+  Label vector to be remapped so that it best matches `target`.
+
+**Returns**
+
+- `aligned_labels`: array of shape `(n_samples,)`  
+  The source labels remapped to match the target label space.
+
+---
+
+### `pairwise_stability`
+
+Computes pointwise assignment stability across all pairs of clustering runs.
+
+    pairwise_stability(
+        labels_runs,
+    )
+
+**Inputs**
+
+- `labels_runs`: list of array-like, each of shape `(n_samples,)`  
+  List of cluster label vectors from multiple clustering runs.
+
+**Returns**
+
+- `assignment_stability`: array of shape `(n_samples,)`  
+  For each sample, the fraction of run-pairs where the sample receives the same aligned label.
+
+---
+
+### `cake`
+
+Computes CAKE confidence scores for each sample in a clustering ensemble.
+
+    cake(
+        X,
+        labels_list,
+        method='product',
+        approximation=False,
+        centers_list=None,
+        geom_norm='clip',
+    )
+
+**Inputs**
+
+- `X`: array-like of shape `(n_samples, n_features)`  
+  Input data matrix.
+
+- `labels_list`: list of array-like, each of shape `(n_samples,)`  
+  List of cluster label vectors from multiple clustering runs.
+
+- `method`: str, default `'product'`  
+  Method used to combine assignment stability and geometric stability.  
+  Options: `'product'` or `'harmonic_mean'`.
+
+- `approximation`: bool, default `False`  
+  Whether to use centroid-based approximate silhouette scores.
+
+- `centers_list`: list of array-like or None, default `None`  
+  Optional list of cluster centers, one per clustering run.  
+  Used when `approximation=True`.
+
+- `geom_norm`: str, default `'clip'`  
+  Strategy for mapping the geometric component to `[0, 1]`.  
+  `'clip'` uses max(mean silhouette − std silhouette, 0).  
+  `'affine'` maps the raw value from `[-1, 1]` to `[0, 1]`.
+
+**Returns**
+
+- `cake_scores`: array of shape `(n_samples,)`  
+  Final CAKE confidence score for each sample.
+
+- `assignment_stability`: array of shape `(n_samples,)`  
+  Pairwise label-agreement stability across clustering runs.
+
+- `geometric_stability`: array of shape `(n_samples,)`  
+  Silhouette-based geometric reliability score.
+
+- `summary`: pandas DataFrame  
+  Per-sample table containing mean silhouette, silhouette standard deviation, geometric stability, assignment stability, and CAKE score.
+
+---
+
+### `consensus_labels`
+
+Computes consensus clustering labels from multiple clustering runs using label alignment and majority vote.
+
+    consensus_labels(
+        labels_list,
+        method='medoid',
+    )
+
+**Inputs**
+
+- `labels_list`: list of array-like, each of shape `(n_samples,)`  
+  List of cluster label vectors from multiple clustering runs.
+
+- `method`: str, default `'medoid'`  
+  Consensus strategy.  
+  `'medoid'` selects the most representative run as reference, aligns all runs to it, and computes majority-vote labels.  
+  `'best_ref'` tries every run as reference and keeps the one with the highest average consensus strength.
+
+**Returns**
+
+- `consensus`: array of shape `(n_samples,)`  
+  Consensus cluster label for each sample.
+
+- `consensus_strength`: array of shape `(n_samples,)`  
+  Fraction of aligned runs voting for the selected consensus label.
+
+- `reference_index`: int  
+  Index of the selected reference run.
+
+Note: majority-vote consensus does not guarantee that all reference cluster labels appear in the final consensus.
+
+---
+
+### `kmeans_ensemble`
+
+Builds a KMeans clustering ensemble by running KMeans multiple times with different random seeds.
+
+    kmeans_ensemble(
+        X,
+        n_clusters,
+        n_runs=50,
+        random_state=1,
+        init='random',
+        n_init=1,
+        max_iter=300,
+        tol=1e-4,
+        algorithm='lloyd',
+        return_models=False,
+
