@@ -1,4 +1,7 @@
 ## CAKE: Confidence in Assignments via K-partition Ensembles
+Accepted for publication in *Machine Learning with Applications*.
+
+
 Clustering assigns each data point to a group, but it does not tell us how reliable that assignment is.  
 While global validation metrics assess overall quality, they provide little insight into the trustworthiness of *individual* assignments.
 
