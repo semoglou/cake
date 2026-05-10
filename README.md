@@ -49,3 +49,25 @@ Preprint: [https://arxiv.org/abs/2602.18435](https://arxiv.org/abs/2602.18435)
 }
 ```
 
+## Installation
+
+Install **CAKE** from [PyPI](https://pypi.org/project/cake-ensemble/):
+
+```bash
+pip install cake-ensemble
+```
+
+Then import it in Python as: 
+
+```bash
+from cake_ensemble import (
+    sil_samples,
+    sil_samples_stats,
+    align_labels,
+    pairwise_stability,
+    cake,
+    consensus_labels,
+    kmeans_ensemble,
+    cake_with_consensus,
+)
+```
