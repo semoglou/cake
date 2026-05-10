@@ -75,7 +75,7 @@ CAKE provides utilities for computing sample-level silhouette statistics, aligni
 
 ---
 
-### `sil_samples`
+#### `sil_samples`
 
 Computes silhouette scores for each sample, either exactly using scikit-learn or approximately using distances to cluster centroids.
 
@@ -106,7 +106,7 @@ sil_samples(X, labels, approximation=False, centers=None)
 
 ---
 
-### `sil_samples_stats`
+#### `sil_samples_stats`
 
 Computes sample-level silhouette statistics across multiple clustering runs.
 
@@ -139,7 +139,7 @@ sil_samples_stats(X, labels_list, approximation=False, centers_list=None)
 
 ---
 
-### `align_labels`
+#### `align_labels`
 
 Aligns the labels of one clustering solution to another using the Hungarian algorithm.
 
@@ -162,7 +162,7 @@ align_labels(target, source)
 
 ---
 
-### `pairwise_stability`
+#### `pairwise_stability`
 
 Computes pointwise assignment stability across all pairs of clustering runs.
 
@@ -182,7 +182,7 @@ pairwise_stability(labels_runs)
 
 ---
 
-### `cake`
+#### `cake`
 
 Computes CAKE confidence scores for each sample in a clustering ensemble.
 
@@ -230,7 +230,7 @@ cake(X, labels_list, method='product', approximation=False, centers_list=None, g
 
 ---
 
-### `consensus_labels`
+#### `consensus_labels`
 
 Computes consensus clustering labels from multiple clustering runs using label alignment and majority vote.
 
@@ -263,7 +263,7 @@ Note: majority-vote consensus does not guarantee that all reference cluster labe
 
 ---
 
-### `kmeans_ensemble`
+#### `kmeans_ensemble`
 
 Builds a KMeans clustering ensemble by running KMeans multiple times with different random seeds.
 
@@ -331,7 +331,7 @@ kmeans_ensemble(
 
 ---
 
-### `cake_with_consensus`
+#### `cake_with_consensus`
 
 Computes CAKE confidence scores together with consensus clustering labels.
 
@@ -396,3 +396,47 @@ cake_with_consensus(
 
 - `reference_index`: int  
   Index of the reference run selected by the consensus method.
+
+## Quick Start
+This example builds a KMeans ensemble and then computes CAKE confidence scores using `cake`.
+
+```python
+from sklearn.datasets import make_blobs
+from cake_ensemble import kmeans_ensemble, cake
+
+# Create example data
+X, _ = make_blobs(
+    n_samples=300,
+    centers=3,
+    n_features=2,
+    cluster_std=1.0,
+    random_state=42,
+)
+
+# Build a KMeans ensemble
+labels_list, centers_list, ensemble_summary = kmeans_ensemble(
+    X,
+    n_clusters=3,
+    n_runs=50,
+    random_state=1,
+)
+
+# Compute CAKE scores
+cake_scores, assignment_stability, geometric_stability, summary = cake(
+    X,
+    labels_list,
+    method="product",
+    approximation=True,
+    centers_list=centers_list,
+    geom_norm="clip",
+)
+
+print(summary.head())
+```
+
+The returned `summary` is a pandas DataFrame with one row per data point: 
+
+Mean Silhouette | STD Silhouette | Geometric Stability | Assignment Stability | CAKE
+
+
+The `CAKE` column contains the final confidence score for each clustering assignment. Higher values indicate assignments that are both stable across the ensemble and geometrically well supported.
