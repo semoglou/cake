@@ -471,7 +471,7 @@ Complete code examples demonstrating core functionality can be found in the [dem
 
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/semoglou/cake/main/figs/demo_cake.gif" width="600">
+  <img src="https://raw.githubusercontent.com/semoglou/cake/main/figs/demo_cake.gif" width="800">
 </div>
 
 ## License
