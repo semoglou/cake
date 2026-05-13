@@ -8,7 +8,7 @@
   <a href="https://pepy.tech/project/cake-ensemble"><img src="https://pepy.tech/badge/cake-ensemble" alt="Downloads"></a>
 </p>
 
-**CAKE** is an open-source Python package for ensemble-based confidence scoring of clustering assignments, enabling the detection of stable core members and ambiguous boundary points in unlabeled data.
+**CAKE** is an open-source Python package for ensemble-based confidence estimation of clustering assignments, enabling the detection of stable core members and ambiguous boundary points in unlabeled data.
 
 Accepted for publication in *Machine Learning with Applications*.
 
