@@ -469,6 +469,9 @@ The `CAKE` column contains the final confidence score for each clustering assign
 
 Complete code examples demonstrating core functionality can be found in the [demos](https://github.com/semoglou/cake/tree/main/demos) section of the repository.
 
+
+![CAKE Confidence Filtering](https://raw.githubusercontent.com/semoglou/cake/main/figs/demo_cake.gif)
+
 ## License
 
 This project is licensed under the [MIT License](https://github.com/semoglou/cake/blob/main/LICENSE).
