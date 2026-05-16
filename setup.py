@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="cake-ensemble",
-    version="0.1.2",
+    version="0.1.3",
     author="Aggelos Semoglou",
     author_email="a.semoglou@outlook.com",
     description="CAKE: Confidence in Assignments via K-partition Ensembles",
