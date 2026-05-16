@@ -490,7 +490,7 @@ Complete code examples demonstrating core functionality can be found in the [dem
   
 ## Acknowledgments
 
-This work was supported by [_Archimedes Research Unit_](https://archimedesai.gr/) of the [_Athena Research Center_](https://www.athenarc.gr/).
+This work was supported by [_Archimedes Research Unit_](https://archimedesai.gr/), [_Athena Research Center_](https://www.athenarc.gr/).
 
 ## License
 
