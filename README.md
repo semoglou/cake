@@ -59,7 +59,8 @@ These components are combined into a single, interpretable score in **[0, 1]**, 
 
 If you find this work useful, please consider citing:
 
-Semoglou, A., & Pavlopoulos, J. (2026). CAKE: Confidence in Assignments via K-partition Ensembles. *Machine Learning with Applications, 24*, 100915. https://doi.org/10.1016/j.mlwa.2026.100915
+Semoglou, A., & Pavlopoulos, J. (2026). CAKE: Confidence in Assignments via K-partition Ensembles.  
+*Machine Learning with Applications, 24*, 100915. https://doi.org/10.1016/j.mlwa.2026.100915
 
 ```bibtex
 @article{semoglou2026cake,
