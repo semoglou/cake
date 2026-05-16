@@ -9,9 +9,9 @@
   <a href="https://doi.org/10.1016/j.mlwa.2026.100915"><img src="https://img.shields.io/badge/DOI-10.1016%2Fj.mlwa.2026.100915-blue" alt="DOI"></a>
 </p>
 
-<table align="center">
+<table>
 <tr>
-<td align="center">
+<td>
 
 📄 **Published in _Machine Learning with Applications_**  
 [Volume 24, 2026, Article 100915](https://www.sciencedirect.com/science/article/pii/S2666827026000800)  
