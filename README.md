@@ -486,8 +486,12 @@ Complete code examples demonstrating core functionality can be found in the [dem
 <div align="center">
   <img src="https://raw.githubusercontent.com/semoglou/cake/main/figs/demo_cake.gif" width="800">
 </div>
+  
 
-```md
+## License
+
+This project is licensed under the [MIT License](https://github.com/semoglou/cake/blob/main/LICENSE).
+
 
 ## Links
 
@@ -498,8 +502,3 @@ Complete code examples demonstrating core functionality can be found in the [dem
 - Preprint: [arXiv:2602.18435](https://arxiv.org/abs/2602.18435)
 
 - Package: [PyPI](https://pypi.org/project/cake-ensemble/)
-```
-
-## License
-
-This project is licensed under the [MIT License](https://github.com/semoglou/cake/blob/main/LICENSE).
