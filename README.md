@@ -22,7 +22,7 @@ DOI: [10.1016/j.mlwa.2026.100915](https://doi.org/10.1016/j.mlwa.2026.100915)
 
 **CAKE** is an open-source Python package for ensemble-based confidence estimation of clustering assignments, enabling the detection of stable core members and ambiguous boundary points in unlabeled data.
 
-#### Motivation
+## Motivation
 
 Clustering assigns each data point to a group, but it does not tell us how reliable that assignment is.  
 While global validation metrics assess overall quality, they provide little insight into the trustworthiness of *individual* assignments.
@@ -59,21 +59,24 @@ These components are combined into a single, interpretable score in **[0, 1]**, 
 
 If you find this work useful, please consider citing:
 
-Semoglou, A., & Pavlopoulos, J. (2026).  
-**Assigning Confidence: K-partition Ensembles.**  
-Preprint: [https://arxiv.org/abs/2602.18435](https://arxiv.org/abs/2602.18435)
+Semoglou, A., & Pavlopoulos, J. (2026). CAKE: Confidence in Assignments via K-partition Ensembles. *Machine Learning with Applications, 24*, 100915. https://doi.org/10.1016/j.mlwa.2026.100915
 
 ```bibtex
-@misc{semoglou2026assigningconfidencekpartitionensembles,
-   title={Assigning Confidence: K-partition Ensembles},
-   author={Aggelos Semoglou and John Pavlopoulos},
-   year={2026},
-   eprint={2602.18435},
-   archivePrefix={arXiv},
-   primaryClass={cs.LG},
-   url={https://arxiv.org/abs/2602.18435},
+
+@article{semoglou2026cake,
+  title   = {CAKE: Confidence in Assignments via K-partition Ensembles},
+  author  = {Semoglou, Aggelos and Pavlopoulos, John},
+  journal = {Machine Learning with Applications},
+  volume  = {24},
+  pages   = {100915},
+  year    = {2026},
+  doi     = {10.1016/j.mlwa.2026.100915},
+  url     = {https://doi.org/10.1016/j.mlwa.2026.100915}
 }
 ```
+
+
+The preprint is also available on arXiv: [https://arxiv.org/abs/2602.18435](https://arxiv.org/abs/2602.18435)
 
 ## Installation
 
@@ -483,6 +486,19 @@ Complete code examples demonstrating core functionality can be found in the [dem
 <div align="center">
   <img src="https://raw.githubusercontent.com/semoglou/cake/main/figs/demo_cake.gif" width="800">
 </div>
+
+```md
+
+## Links
+
+- Published article: [ScienceDirect](https://www.sciencedirect.com/science/article/pii/S2666827026000800)
+
+- DOI: [10.1016/j.mlwa.2026.100915](https://doi.org/10.1016/j.mlwa.2026.100915)
+
+- Preprint: [arXiv:2602.18435](https://arxiv.org/abs/2602.18435)
+
+- Package: [PyPI](https://pypi.org/project/cake-ensemble/)
+```
 
 ## License
 
