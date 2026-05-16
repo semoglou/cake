@@ -5,12 +5,13 @@
   <a href="https://pypi.org/project/cake-ensemble/"><img src="https://img.shields.io/pypi/v/cake-ensemble.svg?color=blue" alt="PyPI version"></a>&nbsp;&nbsp;
   <a href="https://pypi.org/project/cake-ensemble/"><img src="https://img.shields.io/pypi/pyversions/cake-ensemble.svg" alt="Python versions"></a>&nbsp;&nbsp;
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>&nbsp;&nbsp;
-  <a href="https://pepy.tech/project/cake-ensemble"><img src="https://pepy.tech/badge/cake-ensemble" alt="Downloads"></a>
+  <a href="https://pepy.tech/project/cake-ensemble"><img src="https://pepy.tech/badge/cake-ensemble" alt="Downloads"></a>&nbsp;&nbsp;
+  <a href="https://doi.org/10.1016/j.mlwa.2026.100915"><img src="https://img.shields.io/badge/DOI-10.1016%2Fj.mlwa.2026.100915-blue" alt="DOI"></a>
 </p>
 
-<table>
+<table align="center">
 <tr>
-<td>
+<td align="center">
 
 📄 **Published in _Machine Learning with Applications_**  
 [Volume 24, 2026, Article 100915](https://www.sciencedirect.com/science/article/pii/S2666827026000800)  
