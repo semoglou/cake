@@ -9,6 +9,8 @@
 </p>
 
 📄 **Published in _Machine Learning with Applications_**
+[Volume 24, 2026, Article 100915](https://www.sciencedirect.com/science/article/pii/S2666827026000800)  
+DOI: [10.1016/j.mlwa.2026.100915](https://doi.org/10.1016/j.mlwa.2026.100915)
 
 **CAKE** is an open-source Python package for ensemble-based confidence estimation of clustering assignments, enabling the detection of stable core members and ambiguous boundary points in unlabeled data.
 
