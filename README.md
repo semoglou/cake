@@ -4,7 +4,7 @@
 <p align="center">
   <a href="https://pypi.org/project/cake-ensemble/"><img src="https://img.shields.io/pypi/v/cake-ensemble.svg?color=blue" alt="PyPI version"></a>&nbsp;&nbsp;
   <a href="https://pypi.org/project/cake-ensemble/"><img src="https://img.shields.io/badge/python-3.8%2B-blue" alt="Python 3.8+"></a>&nbsp;&nbsp;
-  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>&nbsp;&nbsp;
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-yellow.svg" alt="License: MIT"></a>&nbsp;&nbsp;
   <a href="https://pepy.tech/project/cake-ensemble"><img src="https://pepy.tech/badge/cake-ensemble" alt="Downloads"></a>&nbsp;&nbsp;
   <a href="https://doi.org/10.1016/j.mlwa.2026.100915"><img src="https://img.shields.io/badge/DOI-10.1016%2Fj.mlwa.2026.100915-green" alt="DOI"></a>
 </p>
