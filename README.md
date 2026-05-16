@@ -488,6 +488,9 @@ Complete code examples demonstrating core functionality can be found in the [dem
   <img src="https://raw.githubusercontent.com/semoglou/cake/main/figs/demo_cake.gif" width="800">
 </div>
   
+## Acknowledgments
+
+This work was supported by [_Archimedes Research Unit_](https://archimedesai.gr/) of the [_Athena Research Center_](https://www.athenarc.gr/).
 
 ## License
 
