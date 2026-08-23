@@ -20,7 +20,7 @@ DOI: [10.1016/j.mlwa.2026.100915](https://doi.org/10.1016/j.mlwa.2026.100915)
 <hr>
 
 💻 **Presented at _Greeks in AI 2026_**  
-[2nd Greeks in AI Symposium](https://www.greeksin.ai/), Eugenides Foundation, Athens, Greece · July 15-17, 2026    
+[2nd Greeks in AI Symposium](https://www.greeksin.ai/), [Eugenides Foundation](https://www.eef.edu.gr/en/the-foundation/conference-centre/), Athens, Greece · July 15-17, 2026    
 [OpenReview](https://openreview.net/forum?id=12KXlAEFEa) · [Poster Presentation](https://github.com/semoglou/cake/blob/main/demos/poster_greeksinai.pdf)
 
 </td>
