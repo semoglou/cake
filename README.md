@@ -13,8 +13,8 @@
 <tr>
 <td>
 
-📄 **Published in _Machine Learning with Applications_**  
-[Volume 24, 2026, Article 100915](https://www.sciencedirect.com/science/article/pii/S2666827026000800)  
+📄 **Published in _Machine Learning with Applications (2026)_**  
+[Machine Learning with Applications, Volume 24, 2026, Article 100915](https://www.sciencedirect.com/science/article/pii/S2666827026000800)  
 DOI: [10.1016/j.mlwa.2026.100915](https://doi.org/10.1016/j.mlwa.2026.100915)
 
 <hr>
@@ -22,6 +22,11 @@ DOI: [10.1016/j.mlwa.2026.100915](https://doi.org/10.1016/j.mlwa.2026.100915)
 💻 **Presented at _Greeks in AI 2026_**  
 [2nd Greeks in AI Symposium](https://www.greeksin.ai/), [Eugenides Foundation](https://www.eef.edu.gr/en/the-foundation/conference-centre/), Athens, Greece · July 15-17, 2026    
 [OpenReview](https://openreview.net/forum?id=12KXlAEFEa) · [Poster Presentation](https://github.com/semoglou/cake/blob/main/demos/poster_greeksinai.pdf)
+
+<hr>
+
+💻 **Presented at _Archimedes 3min PhD Talks + Posters 2025_**  
+[Archimedes Research Unit Talks](https://archimedesai.gr/en/events/485-archimedes-3mins-phd-talks-posters), [Athena Research Center](https://www.athenarc.gr/en/home), Athens, Greece · September 12, 2025
 
 </td>
 </tr>
