@@ -504,6 +504,16 @@ Complete code examples demonstrating core functionality can be found in the [dem
 
 This work was supported by [_Archimedes Research Unit_](https://archimedesai.gr/), [_Athena Research Center_](https://www.athenarc.gr/en).
 
+<p align="center">
+
+  <img src="logos/AthenaRC_Archimedes_Unit_Logo_EN_Standard_Colour.png" alt="Athena Research Center and Archimedes Research Unit" width="500">
+
+</p>
+
+## Contact
+
+For questions or feedback about **CAKE**, feel free to contact me at [a.semoglou@outlook.com](mailto:a.semoglou@outlook.com).
+
 ## License
 
 This project is licensed under the [MIT License](https://github.com/semoglou/cake/blob/main/LICENSE).
