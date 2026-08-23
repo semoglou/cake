@@ -507,7 +507,7 @@ This work was supported by [_Archimedes Research Unit_](https://archimedesai.gr/
 <br>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/semoglou/cake/main/logos/AthenaRC_Archimedes_Unit_Logo_EN_Standard_Colour.png" alt="Athena Research Center and Archimedes Research Unit" width="350">
+  <img src="https://raw.githubusercontent.com/semoglou/cake/main/logos/AthenaRC_Archimedes_Unit_Logo_EN_Standard_Colour.png" alt="Athena Research Center and Archimedes Research Unit" width="250">
 </p>
 
 ## Contact
