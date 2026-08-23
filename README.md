@@ -504,8 +504,10 @@ Complete code examples demonstrating core functionality can be found in the [dem
 
 This work was supported by [_Archimedes Research Unit_](https://archimedesai.gr/), [_Athena Research Center_](https://www.athenarc.gr/en).
 
+<br>
+
 <p align="center">
-  <img src="https://raw.githubusercontent.com/semoglou/cake/main/logos/AthenaRC_Archimedes_Unit_Logo_EN_Standard_Colour.png" alt="Athena Research Center and Archimedes Research Unit" width="500">
+  <img src="https://raw.githubusercontent.com/semoglou/cake/main/logos/AthenaRC_Archimedes_Unit_Logo_EN_Standard_Colour.png" alt="Athena Research Center and Archimedes Research Unit" width="350">
 </p>
 
 ## Contact
