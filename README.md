@@ -17,7 +17,7 @@
 [Volume 24, 2026, Article 100915](https://www.sciencedirect.com/science/article/pii/S2666827026000800)  
 DOI: [10.1016/j.mlwa.2026.100915](https://doi.org/10.1016/j.mlwa.2026.100915)
 
----
+<hr>
 
 💻 **Presented at _Greeks in AI 2026_**  
 [2nd Greeks in AI Symposium](https://www.greeksin.ai/), Eugenides Foundation, Athens, Greece · July 15-17, 2026    
