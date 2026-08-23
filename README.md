@@ -26,7 +26,8 @@ Presentation: [Poster](https://github.com/semoglou/cake/blob/main/demos/poster_g
 <hr>
 
 💻 **Presented at _Archimedes 3min PhD Talks + Posters 2025_**  
-[Archimedes Research Unit Talks](https://archimedesai.gr/en/events/485-archimedes-3mins-phd-talks-posters), [Athena Research Center](https://www.athenarc.gr/en/home), Athens, Greece · September 12, 2025
+[Archimedes Talks](https://archimedesai.gr/en/events/485-archimedes-3mins-phd-talks-posters), [Archimedes Research Unit](https://archimedesai.gr/en/)  
+[Athena Research Center](https://www.athenarc.gr/en/home), Athens, Greece · September 12, 2025
 
 </td>
 </tr>
