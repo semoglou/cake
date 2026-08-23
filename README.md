@@ -17,6 +17,10 @@
 [Volume 24, 2026, Article 100915](https://www.sciencedirect.com/science/article/pii/S2666827026000800)  
 DOI: [10.1016/j.mlwa.2026.100915](https://doi.org/10.1016/j.mlwa.2026.100915)
 
+💻 **Presented at _Greeks in AI 2026_**  
+[2nd Greeks in AI Symposium](https://www.greeksin.ai/), Eugenides Foundation, Athens, Greece · July 15-17, 2026    
+Poster presentation: [cake_poster](https://github.com/semoglou/cake/blob/main/demos/poster_greeksinai.pdf)
+
 </td>
 </tr>
 </table>
@@ -87,7 +91,7 @@ Install **CAKE** from [PyPI](https://pypi.org/project/cake-ensemble/):
 pip install cake-ensemble
 ```
 
-Ιmport the main functions in Python as: 
+Import the main functions in Python as: 
 
 ```python
 from cake_ensemble import (
@@ -504,5 +508,7 @@ This project is licensed under the [MIT License](https://github.com/semoglou/cak
 - DOI: [10.1016/j.mlwa.2026.100915](https://doi.org/10.1016/j.mlwa.2026.100915)
 
 - Preprint: [arXiv:2602.18435](https://arxiv.org/abs/2602.18435)
+
+- Poster: [2nd Greeks in AI Symposium](https://github.com/semoglou/cake/blob/main/demos/poster_greeksinai.pdf)
 
 - Package: [PyPI](https://pypi.org/project/cake-ensemble/)
